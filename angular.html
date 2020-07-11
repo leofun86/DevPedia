@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" defer></script>
+    <title>Anotaciones MultiMedia</title>
+  </head>
+  <body class="bodi pt-5">
+    <div class="container-fluid p-0 p-lg-4" style="height:100%!important;">
+
+      <h3 class="ml-2 ml-lg-0">ANGULAR</h3>
+
+      <table class="table table-dark table-striped">
+        <tbody>
+          <tr>
+            <td><span class="text-info p-1"><b>Instalar Angular</b></span></td>
+            <td><code>npm install -g @angular/cli</code></td>
+          </tr>
+		      <tr>
+            <td><span class="text-info p-1"><b>Versión de Angular instalada</b></span></td>
+            <td><code>ng --version</code></td>
+          </tr>
+		      <tr>
+            <td><span class="text-info p-1"><b>Crear proyecto</b></span></td>
+            <td><code>ng new nombreProyecto</code></td>
+          </tr>
+		      <tr>
+            <td><span class="text-info p-1"><b>Crear componente</b></span></td>
+            <td><code>ng g c nombreComponente</code></td>
+          </tr>
+		      <tr>
+            <td><span class="text-info p-1">Agregar componente</span></td>
+            <td><code><span class="text-white">Dentro de app.component.html ==> </span><span class="text-primary">&lt;componente&gt;&lt;/componente&gt;</span></code></td>
+          </tr>
+		      <tr>
+            <td><span class="text-info p-1"><b>Directiva ngIf:</b> hacer o no visible elementos</span></td>
+            <td><code>
+      				<span class="text-white">Visible</span><br>
+      				&nbsp&nbsp&lt;p <span class="text-success">*ngIf="true"</span>&gt;Hola Mundo&lt;/p&gt;<br>
+      				<span class="text-white">Invisible</span><br>
+      				&nbsp&nbsp&lt;p <span class="text-success">*ngIf="false"</span>&gt;Chau Mundo&lt;/p&gt;<br>
+      				<span class="text-white">Con else: declara una variable que hará visible un elemento dentro de un ng-template</span><br>
+      				&nbsp&nbsp&lt;p <span class="text-success">*ngIf="false; else show2"</span>&gt;Chau Mundo&lt;/p&gt;<br>
+      				<span class="text-primary">&nbsp&nbsp&lt;ng-template #show2&gt;</span>Volví Mundo<span class="text-primary">&lt;/ng-template&gt;</span><br>
+    			  </code></td>
+          </tr>
+		      <tr>
+            <td><span class="text-info p-1"><b>Directiva ngClass:</b> Aplicación de clases en elementos del DOM</span></td>
+            <td><code>
+              <span class="text-white">Simple</span><br>
+              &lt;div <span class="text-success">*ngClass="d-block"</span>&gtDiv con directiva ngClass&lt;/div&gt;<br>
+              <span class="text-white">Con evaluación</span><br>
+              &lt;div <span class="text-success">*ngClass="{'d-block':visible==true}"</span>&gtngCLass con evaluación&lt;/div&gt;
+            </code></td>
+          </tr>
+          <tr>
+            <td><span class="text-info p-1"><b>Directiva ngFor:</b> Iteración de elementos</span></td>
+            <td><code>
+              const personas = &#91;<br>
+              &nbsp&nbsp&nbsp&nbsp&#123; nombre: 'Leo', apellido: 'Funes', edad: '33' &#125;,<br>
+              &nbsp&nbsp&nbsp&nbsp&#123; nombre: 'Jazmín', apellido: 'Pérez', edad: '25' &#125;,<br>
+              &nbsp&nbsp&nbsp&nbsp&#123; nombre: 'Martín', apellido: 'Ponce', edad: '18' &#125;,<br>
+              &nbsp&nbsp&nbsp&nbsp&#123; nombre: 'Miguel', apellido: 'López', edad: '46' &#125;,<br>
+              &#93;&#59;<br><br>
+              &lt;table&gt;<br>
+              &nbsp;&nbsp;&lt;thead&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;NOMBRE&lt;/th&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;APELLIDO&lt;/th&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;EDAD&lt;/th&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+              &nbsp;&nbsp;&lt;/thead&gt;<br><br>
+              &nbsp;&nbsp;&lt;tbody&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr <span class="text-success">*ngFor="let persona of personas"</span>&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;<span class="text-primary">&#123;&#123;persona.nombre&#125;&#125;</span>&lt;/td&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;<span class="text-primary">&#123;&#123;persona.apellido&#125;&#125;</span>&lt;/td&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;<span class="text-primary">&#123;&#123;persona.edad&#125;&#125;</span>&lt;/td&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+              &nbsp;&nbsp;&lt;/tbody&gt;<br>
+            </code></td>
+          </tr>
+		      <tr>
+            <td><span class="text-info p-1"><b>Evento con variable</b></span></td>
+            <td><code>
+              &lt;button <span class="text-success">&#40click&#41="variable=valor"</span> &gt;Action&lt;/button&gt;
+            </code></td>
+          </tr>
+		      <tr>
+            <td><span class="text-info p-1"><b>Mostrar valor de variable en HTML</b></span></td>
+            <td><code>&lt;p&gt;El valor es <span class="text-success">{{variable}}</span>&lt;/p&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
